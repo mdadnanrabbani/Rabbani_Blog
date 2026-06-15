@@ -1,9 +1,13 @@
 from django.contrib import messages
 from django.db.models import Q, Model
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+from blog import settings
 from home.forms import ContactForm, CommentForm
 from home.models import BlogPost, Contact, Comments
+from django.core.mail import send_mail
+
 
 
 # Create your views here.

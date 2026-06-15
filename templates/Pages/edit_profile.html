@@ -1,0 +1,105 @@
+{% extends 'Pages/base.html' %}
+
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Profile</title>
+</head>
+<body>
+<div class="dashboard-wrapper">
+
+    {% include 'Widgets/sidebar.html' %}
+
+    <main class="dash-main-content">
+
+        <header class="dash-content-header">
+            <div class="welcome-msg">
+                <h1>Edit Personal Profile</h1>
+                <p>Update your display identifiers, account credentials, and master dashboard communication channels.</p>
+            </div>
+        </header>
+
+        <section class="form-card-container">
+            <form action="{% url 'edit_profile' user.id %}" method="POST" class="modern-form backend-constrained-form">
+                {% csrf_token %}
+
+                {% if messages %}
+                <div class="messages-wrapper">
+                    {% for message in messages %}
+                    <div class="alert-box alert-{{ message.tags }}">
+                        <span class="alert-message">{{ message }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if form.non_field_errors %}
+                <div class="form-errors global-errors">
+                    {% for error in form.non_field_errors %}
+                    <p class="error-msg">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="form-fields-grid">
+
+                    <div class="form-group">
+                        <label class="form-label" for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                        <div class="input-field-wrapper">
+                            {{ form.first_name }}
+                        </div>
+                        {% if form.first_name.errors %}
+                        <div class="field-errors">{% for error in form.first_name.errors %}{{ error }}{% endfor %}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                        <div class="input-field-wrapper">
+                            {{ form.last_name }}
+                        </div>
+                        {% if form.last_name.errors %}
+                        <div class="field-errors">{% for error in form.last_name.errors %}{{ error }}{% endfor %}</div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                    <div class="input-field-wrapper">
+                        {{ form.username }}
+                    </div>
+                    {% if form.username.errors %}
+                    <div class="field-errors">{% for error in form.username.errors %}{{ error }}{% endfor %}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    <div class="input-field-wrapper">
+                        {{ form.email }}
+                    </div>
+                    {% if form.email.errors %}
+                    <div class="field-errors">{% for error in form.email.errors %}{{ error }}{% endfor %}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-actions-row">
+                    <button type="submit" class="dash-btn-submit">Save Changes</button>
+                    <a href="#" class="dash-btn-cancel" onclick="history.back(); return false;">Cancel</a>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+</div>
+</body>
+</html>
+{% endblock content %}

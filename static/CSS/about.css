@@ -1,0 +1,284 @@
+/* ==========================================================================
+   FULL-PAGE STANDALONE ABOUT US STYLE ENGINE
+   ========================================================================== */
+
+/* Full standalone parent canvas box layout tracking wrapper */
+.full-page-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8fafc; /* Slate 50 */
+    padding: 3rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Centered layout bounding column */
+.about-workspace-constrained {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* --- Text Utility Center Alignments --- */
+.text-center {
+    text-align: center;
+}
+
+/* --- Clean Modern Page Headers --- */
+.about-master-header {
+    margin-bottom: 0.5rem;
+}
+
+.system-pre-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2563eb;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.about-master-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Base Structural Panel Cards --- */
+.about-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+}
+
+/* --- Section 1: Developer Meta Biography Card --- */
+.bio-intro-block {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.developer-avatar-shell {
+    width: 64px;
+    height: 64px;
+    border-radius: 0.5rem;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-initials {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: -0.01em;
+}
+
+.developer-title-meta h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.dev-badge-stamp {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profile-divider {
+    border: 0;
+    height: 1px;
+    background-color: #f1f5f9;
+    margin: 1.75rem 0;
+}
+
+.bio-narrative-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bio-narrative-text p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- Section 2: Concepts & Learning Grid --- */
+.about-insights-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.section-title-wrapper h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title-wrapper p {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.insights-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.insight-metric-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.metric-icon-shell {
+    width: 42px;
+    height: 42px;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-tint { background-color: #eff6ff; color: #2563eb; }
+.green-tint { background-color: #f0fdf4; color: #166534; }
+.orange-tint { background-color: #fff7ed; color: #ea580c; }
+
+.insight-metric-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.insight-metric-card p {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Section 3: Professional Production Credit Table --- */
+.credits-distribution-table {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.credit-row-item {
+    display: flex;
+    background-color: #ffffff;
+}
+
+.credit-row-item:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.credit-label-cell {
+    width: 180px;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+
+.credit-value-cell {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.credit-value-cell h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.credit-value-cell p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Role Badges Shading Specs */
+.role-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.25rem;
+}
+
+.backend-badge { background-color: #faf5ff; color: #6b21a8; border: 1px solid #f3e8ff; }
+.ui-badge { background-color: #ecfeff; color: #155e75; border: 1px solid #cffafe; }
+
+/* --- Mobile System Adaptive Breakpoint Mechanics --- */
+@media (max-width: 840px) {
+    .full-page-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .about-card {
+        padding: 1.5rem;
+    }
+
+    .insights-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .credit-row-item {
+        flex-direction: column;
+    }
+
+    .credit-label-cell {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem 1.5rem;
+    }
+}

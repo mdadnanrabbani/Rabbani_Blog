@@ -1,0 +1,92 @@
+{% extends 'Pages/base.html' %}
+{% load static %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'CSS/contact.css' %}">
+    <title>Contact</title>
+</head>
+<body>
+
+<div class="full-page-container">
+    <div class="about-workspace-constrained">
+
+        <header class="about-master-header">
+            <div class="welcome-msg text-center">
+                <span class="system-pre-title">Get In Touch</span>
+                <h1>Contact Us</h1>
+                <p class="header-subtitle">Have questions regarding backend structures, codebase optimization, or development inquiries? Send a transmission.</p>
+            </div>
+        </header>
+
+        <section class="about-card form-card-container">
+
+            {% if messages %}
+                <div class="messages-wrapper">
+                    {% for message in messages %}
+                        <div class="alert-box alert-{{ message.tags }}">
+                            <span class="alert-message">{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form action="{% url 'contact' %}" method="POST" class="modern-form backend-constrained-form">
+                {% csrf_token %}
+
+                <div class="form-fields-grid">
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact_name">{{form.name.label}}e</label>
+                        <div class="input-field-wrapper">
+                            {{form.name}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="contact_email">{{form.email.label}}</label>
+                        <div class="input-field-wrapper">
+                            {{form.email}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="contact_subject">{{form.subject.label}}</label>
+                    <div class="input-field-wrapper">
+                        {{form.subject}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="contact_message">{{form.message.label}}</label>
+                    <div class="input-field-wrapper">
+                        {{form.message}}
+                    </div>
+                </div>
+
+                <div class="form-actions-row">
+                    <button type="submit" class="dash-btn-submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.35rem; vertical-align: middle;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Send Message
+                    </button>
+                    <a href="#" class="dash-btn-cancel" onclick="history.back(); return false;">Cancel</a>
+                </div>
+
+            </form>
+        </section>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}

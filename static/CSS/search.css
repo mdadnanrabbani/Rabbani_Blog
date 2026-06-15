@@ -1,0 +1,218 @@
+/* --- Search Root Containers --- */
+.search-results-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* --- Styled Section Header Box --- */
+.search-page-header {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+}
+
+.search-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.search-main-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.search-meta-info {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+/* --- Search Outputs Horizontal Row Stack Cards Layout --- */
+.search-output-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.search-post-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 240px 1fr; /* Split Thumbnail section from Content text spaces */
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.search-post-card:hover {
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    border-color: #cbd5e1;
+}
+
+/* Card Left Image Area Thumbnail handling */
+.search-card-thumb {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    background-color: #f1f5f9;
+    overflow: hidden;
+}
+
+.search-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+}
+
+/* Right Text Interface */
+.search-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search-card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    background-color: #eff6ff;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.search-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+.search-card-title a {
+    text-decoration: none;
+    color: #0f172a;
+    transition: color 0.2s ease;
+}
+
+.search-card-title a:hover {
+    color: #2563eb;
+}
+
+.search-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 1.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tiny Card Meta Footers row rules */
+.search-card-meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.meta-item svg {
+    color: #94a3b8;
+}
+
+/* --- Empty Directory State UI Fallback --- */
+.empty-search-state {
+    text-align: center;
+    padding: 5rem 1.5rem;
+    background-color: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.empty-search-icon {
+    width: 48px;
+    height: 48px;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.empty-search-state h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.empty-search-state p {
+    color: #64748b;
+    max-width: 420px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.return-home-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.return-home-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Micro Layout Breakpoints --- */
+@media (max-width: 768px) {
+    .search-post-card {
+        grid-template-columns: 1fr; /* Stack picture vertically over mobile headers */
+    }
+
+    .search-card-thumb {
+        height: 180px;
+        min-height: auto;
+    }
+
+    .search-page-header {
+        padding: 1.5rem;
+    }
+
+    .search-main-title {
+        font-size: 1.6rem;
+    }
+}

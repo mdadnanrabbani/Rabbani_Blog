@@ -1,0 +1,118 @@
+{% extends 'Pages/base.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'CSS/about.css' %}">
+    <title>About Us</title>
+</head>
+<body>
+
+<div class="full-page-container">
+    <div class="about-workspace-constrained">
+
+        <header class="about-master-header">
+            <div class="welcome-msg text-center">
+                <span class="system-pre-title">Project Overview</span>
+                <h1>About This Platform</h1>
+                <p class="header-subtitle">The technical origin story, developmental milestones, and engineering credits behind the application matrix.</p>
+            </div>
+        </header>
+
+        <section class="about-card about-biography-card">
+            <div class="bio-intro-block">
+                <div class="developer-avatar-shell">
+                    <span class="dev-initials">AR</span>
+                </div>
+                <div class="developer-title-meta">
+                    <h2>Mohammad Adnan Rabbani</h2>
+                    <span class="dev-badge-stamp">Lead Backend Developer & Architect</span>
+                </div>
+            </div>
+
+            <hr class="profile-divider">
+
+            <div class="bio-narrative-text">
+                <p>
+                    Welcome to this custom-built content management space. I am **Mohammad Adnan Rabbani**.
+                    I engineered this fully dynamic web blog platform from scratch using the **Django** application framework.
+                    This project was initially conceived and executed as an intensive, hands-on tactical environment to learn, refine, and nourish my Django development skills.
+                </p>
+                <p>
+                    Throughout the lifecycle of building this project, I moved past basic tutorials to master many complex web concepts. The development journey involved transforming loose design elements into strict relational databases, managing advanced data flows, and implementing clean code architectural patterns that keep the entire network environment secure and scalable.
+                </p>
+            </div>
+        </section>
+
+        <section class="about-insights-section">
+            <div class="section-title-wrapper text-center">
+                <h2>Concepts Learned & Applied</h2>
+                <p>Core engineering paradigms implemented across the codebase during the development cycles.</p>
+            </div>
+
+            <div class="insights-grid-layout">
+                <div class="insight-metric-card">
+                    <div class="metric-icon-shell blue-tint">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    </div>
+                    <h3>Django ORM & Relational Databases</h3>
+                    <p>Designed data schemas mapping user profiles, posts database, and taxonomy categories fields securely.</p>
+                </div>
+
+                <div class="insight-metric-card">
+                    <div class="metric-icon-shell green-tint">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Authentication Systems</h3>
+                    <p>Integrated secure credentials handling, user state validation pipelines, and session management tracking frameworks.</p>
+                </div>
+
+                <div class="insight-metric-card">
+                    <div class="metric-icon-shell orange-tint">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 22"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h3>MVT Architecture & DRY</h3>
+                    <p>Optimized functional views controllers, database queryset filters, and dynamic template inheritance layouts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-card credits-footer-card">
+            <div class="section-title-wrapper text-center">
+                <h2>Production Credit Matrix</h2>
+                <p>Official structural credits for the architectural design and system logic layers.</p>
+            </div>
+
+            <div class="credits-distribution-table">
+                <div class="credit-row-item">
+                    <div class="credit-label-cell">
+                        <span class="role-badge backend-badge">Backend System</span>
+                    </div>
+                    <div class="credit-value-cell">
+                        <h4>Mohammad Adnan Rabbani</h4>
+                        <p>Architected all core application logics, complex routing sets, form validations, dynamic media engines, and server interactions via Python & Django.</p>
+                    </div>
+                </div>
+
+                <div class="credit-row-item">
+                    <div class="credit-label-cell">
+                        <span class="role-badge ui-badge">UI/UX Design</span>
+                    </div>
+                    <div class="credit-value-cell">
+                        <h4>Gemini AI</h4>
+                        <p>Rendered layout compositions, uniform dashboard spacing patterns, typography scaling rules, and fluid cross-device interface elements styling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}

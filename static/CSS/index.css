@@ -1,0 +1,204 @@
+/* --- Blog Body Container Styling --- */
+.blog-body-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem; /* Generous spacing between major layout blocks */
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Subtle accent line under section headers */
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+/* --- Common Card Layout Assets --- */
+.card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #e2e8f0;
+}
+
+.card-img-wrapper img, .featured-hero-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Card image zoom effect on hover */
+article:hover .card-img-wrapper img,
+.featured-card-hero:hover .featured-hero-img-wrapper img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 1rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-title a, .hero-title a {
+    text-decoration: none;
+    color: #0f172a;
+    transition: color 0.2s ease;
+}
+
+.card-title a:hover, .hero-title a:hover {
+    color: #2563eb;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #64748b;
+    /* Limit description to 3 lines max for visual balance */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- 1. Hero Block Layout --- */
+.featured-card-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.featured-hero-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.featured-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.badge {
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.read-more-btn:hover {
+    color: #1d4ed8;
+}
+
+/* --- 2. Two Column Grid Layout --- */
+.featured-grid-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.featured-secondary-card .card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* --- 3. Three Column Grid Layout --- */
+.recent-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.recent-post-card .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 968px) {
+    .featured-card-hero {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .recent-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .blog-body-container {
+        gap: 3rem;
+        padding: 2rem 1rem;
+    }
+
+    .featured-grid-two-col,
+    .recent-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}

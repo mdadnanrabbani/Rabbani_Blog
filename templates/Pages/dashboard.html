@@ -1,0 +1,57 @@
+{% extends "Pages/base.html" %}
+
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+<!--    Load Sidebar Here-->
+    {% include 'Widgets/sidebar.html' %}
+
+    <main class="dash-main-content">
+        <header class="dash-content-header">
+            <div class="welcome-msg">
+                <h1>Overview Dashboard</h1>
+                <p>Welcome back! Here is a summary overview of your publication architecture metrics.</p>
+            </div>
+        </header>
+
+        <section class="metrics-cards-grid">
+
+            <div class="stat-card">
+                <div class="stat-card-icon card-blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </div>
+                <div class="stat-card-info">
+                    <span class="stat-label">Total Blogs</span>
+                    <h2 class="stat-value">{{ TotalBlogsCount|default:"0" }}</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-card-icon card-purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div class="stat-card-info">
+                    <span class="stat-label">Total Categories</span>
+                    <h2 class="stat-value">{{ TotalCategories|default:"0" }}</h2>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</div>
+</body>
+</html>
+
+{% endblock %}

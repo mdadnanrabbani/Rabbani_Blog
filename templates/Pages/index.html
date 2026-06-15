@@ -1,0 +1,77 @@
+{% extends "Pages/base.html" %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'CSS/index.css' %}">
+    <title>Home</title>
+</head>
+<body>
+<main class="blog-body-container">
+
+    {% for post in posts %}
+        {% if forloop.first %}
+            <section class="hero-featured-section">
+                <div class="featured-card-hero">
+                    <div class="featured-hero-img-wrapper">
+                        <img src="{{ post.featured_img.url }}" alt="{{ post.title }}">
+                    </div>
+                    <div class="featured-hero-content">
+                        <span class="badge">Editor's Pick</span>
+                        <h1 class="hero-title"><a href="{% url 'view_blog' post.slug %}">{{ post.title }}</a></h1>
+                        <p class="hero-desc">{{ post.short_description }}</p>
+                        <a href="{% url 'view_blog' post.slug %}" class="read-more-btn">Read Article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+
+    <section class="section-wrapper">
+        <h2 class="section-heading">Featured Stories</h2>
+        <div class="featured-grid-two-col">
+            {% for post in posts %}
+                {% if not forloop.first %}
+                    <article class="featured-secondary-card">
+                        <div class="card-img-wrapper">
+                            <img src="{{ post.featured_img.url }}" alt="{{ post.title }}">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title"><a href="{% url 'view_blog' post.slug %}">{{ post.title }}</a></h3>
+                            <p class="card-desc">{{ post.short_description }}</p>
+                        </div>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section-wrapper">
+        <h2 class="section-heading">Recent Posts</h2>
+        <div class="recent-posts-grid">
+            {% for recent_post in recent_posts %}
+                <article class="recent-post-card">
+                    <div class="card-img-wrapper">
+                        <img src="{{ recent_post.featured_img.url }}" alt="{{ recent_post.title }}">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><a href="{% url 'view_blog' recent_post.slug %}">{{ recent_post.title }}</a></h3>
+                        <p class="card-desc">{{ recent_post.short_description }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+</main>
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,406 @@
+/* --- Global Archive Layout Wrapper --- */
+.archive-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* --- Archive Header Block --- */
+.archive-page-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.archive-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.04em;
+}
+
+.archive-meta-info {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* --- 3-Column Uniform Masonry Alternative Grid --- */
+.blog-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.archive-post-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.06);
+}
+
+/* Image Wrapper Layout featuring absolute Tagging Positioning */
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    position: relative;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.archive-post-card:hover .card-image-wrapper img {
+    transform: scale(1.02);
+}
+
+/* Floating overlay category badge */
+.card-category-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(15, 23, 42, 0.85); /* Premium semi-transparent charcoal background */
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* --- Internal Body Content --- */
+.card-body-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-post-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+}
+
+.card-post-title a {
+    text-decoration: none;
+    color: #0f172a;
+    transition: color 0.2s ease;
+}
+
+.card-post-title a:hover {
+    color: #2563eb;
+}
+
+.card-post-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Content Card Footer Metrics Alignments --- */
+.card-post-meta {
+    margin-top: auto; /* Standard line stabilizer baseline anchor */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.85rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.825rem;
+    color: #64748b;
+}
+
+.meta-author, .meta-date {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.meta-author svg, .meta-date svg {
+    color: #94a3b8;
+}
+
+/* --- Empty Directory State UI Fallback --- */
+.empty-archive-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 6rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.empty-icon {
+    width: 54px;
+    height: 54px;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.empty-archive-state h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.empty-archive-state p {
+    color: #64748b;
+    max-width: 440px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.return-home-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.return-home-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Adaptive Viewport Media Queries --- */
+@media (max-width: 968px) {
+    .blog-archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .archive-main-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .archive-container {
+        padding: 2rem 1rem;
+        gap: 2.5rem;
+    }
+
+    .blog-archive-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- Search Box Styles --- */
+.search-section {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.search-form-icon {
+    position: absolute;
+    left: 1.25rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    font-size: 1rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+/* Clear focus state */
+.search-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px #eff6ff;
+}
+
+/* Clear search button styling inside wrapper */
+.clear-search-btn {
+    position: absolute;
+    right: 1rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.clear-search-btn:hover {
+    color: #475569;
+}
+
+/* Primary Search Submit Button */
+.search-submit-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid #2563eb;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.08);
+}
+
+.search-submit-btn:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Mobile responsive alignment */
+@media (max-width: 540px) {
+    .search-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-submit-btn {
+        padding: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/* --- Search Box Styles --- */
+.search-section {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.search-form-icon {
+    position: absolute;
+    left: 1.25rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    font-size: 1rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+/* Clear focus state */
+.search-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px #eff6ff;
+}
+
+/* Clear search button styling inside wrapper */
+.clear-search-btn {
+    position: absolute;
+    right: 1rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.clear-search-btn:hover {
+    color: #475569;
+}
+
+/* Primary Search Submit Button */
+.search-submit-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid #2563eb;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.08);
+}
+
+.search-submit-btn:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Mobile responsive alignment */
+@media (max-width: 540px) {
+    .search-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-submit-btn {
+        padding: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+}

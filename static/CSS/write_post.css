@@ -1,0 +1,210 @@
+/* --- Form Card Frame Layout --- */
+.form-card-container {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.01);
+}
+
+/* Constrains form container width on large desktop monitors */
+.backend-constrained-form {
+    max-width: 720px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- Form Field Groups & Labels --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* --- Universal Field Controls & Visibility Engine --- */
+.input-field-wrapper {
+    width: 100%;
+}
+
+/* Direct global input matching target classes to bypass Django auto-widget tag issues */
+.form-control,
+.input-field-wrapper input,
+.input-field-wrapper input[type="text"],
+.input-field-wrapper select,
+.input-field-wrapper textarea {
+    display: block;
+    width: inherit;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.375rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+/* Form Height Formatting Restrictions for the Content Editor Box */
+.input-field-wrapper textarea {
+    min-height: 200px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Custom CSS formatting design for dropdown selectors */
+.input-field-wrapper select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+}
+
+/* Focus Glow Architecture rules */
+.form-control:focus,
+.input-field-wrapper input:focus,
+.input-field-wrapper select:focus,
+.input-field-wrapper textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px #eff6ff;
+}
+
+/* --- Internal Form Grid (2 Columns) --- */
+.form-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* File Pickers upload UI wrapper elements */
+.file-input-wrapper {
+    background-color: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.375rem;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 45px;
+}
+
+.file-input-wrapper input[type="file"] {
+    font-size: 0.85rem;
+    color: #475569;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Checkbox Toggle Form Alignment Parameters */
+.checkbox-group {
+    justify-content: flex-end;
+    padding-bottom: 0.75rem;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #334155;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* --- Explicit Publish & Cancel Actions Button Layout --- */
+.form-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f1f5f9; /* Subtle divider separator line */
+}
+
+/* Publish Post Button */
+.dash-btn-submit {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid #2563eb;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
+}
+
+.dash-btn-submit:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Cancel Action Button Navigation Element */
+.dash-btn-cancel {
+    background-color: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.dash-btn-cancel:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+    border-color: #94a3b8;
+}
+
+/* --- Mobile Breakpoints Grid Recalibration --- */
+@media (max-width: 680px) {
+    .form-card-container {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .form-fields-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-actions-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .dash-btn-submit,
+    .dash-btn-cancel {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

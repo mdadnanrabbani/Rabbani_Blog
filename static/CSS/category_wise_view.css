@@ -1,0 +1,206 @@
+/* --- Category Container --- */
+.category-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* --- Category Header Section --- */
+.category-page-header {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.archive-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.category-main-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.category-meta-info {
+    font-size: 1rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* --- 3-Column Posts Grid Layout --- */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.category-post-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures buttons and lines align on asymmetric grids */
+}
+
+.card-post-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.card-post-title a {
+    text-decoration: none;
+    color: #0f172a;
+    transition: color 0.2s ease;
+}
+
+.card-post-title a:hover {
+    color: #2563eb;
+}
+
+.card-post-desc {
+    font-size: 0.925rem;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Meta Card Footers --- */
+.card-post-meta {
+    margin-top: auto; /* Aligns data vectors along row bottom margins */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.825rem;
+    color: #64748b;
+}
+
+.meta-author, .meta-date {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.meta-author svg, .meta-date svg {
+    color: #94a3b8;
+}
+
+/* --- Empty Category Fallback UI --- */
+.empty-category-state {
+    grid-column: 1 / -1; /* Forces full row distribution spanning across active breakpoints */
+    text-align: center;
+    padding: 5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.empty-icon {
+    width: 48px;
+    height: 48px;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.empty-category-state h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.empty-category-state p {
+    color: #64748b;
+    max-width: 400px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.return-home-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.return-home-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Layout Engine Breakpoints --- */
+@media (max-width: 968px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .category-container {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .category-page-header {
+        padding: 1.5rem;
+    }
+
+    .category-main-title {
+        font-size: 1.75rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}

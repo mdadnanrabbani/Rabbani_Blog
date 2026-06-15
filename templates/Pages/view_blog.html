@@ -112,7 +112,7 @@
             <ul class="widget-list recent-posts-list">
                 {% for recent_post in recent_posts %}
                 <li>
-                    <a href="/">{{ recent_post.title }}</a>
+                    <a href="{% url 'view_blog' recent_post.slug %}">{{ recent_post.title }}</a>
                 </li>
                 {% empty %}
                 <li>No recent posts yet.</li>
@@ -125,7 +125,7 @@
             <ul class="widget-list categories-list">
                 {% for cat in categories %}
                 <li>
-                    <a href="#">{{ cat.category_name }}</a>
+                    <a href="{% url 'category_wise_view' cat.slug %}">{{ cat.category_name }}</a>
                 </li>
                 {% empty %}
                 <li>No categories available.</li>
